@@ -27,10 +27,13 @@ public class ConveyorScript : MonoBehaviour
         Debug.Log("In Collision with: " + collision.gameObject.name);
         direction = transform.right;
         direction = direction * speed;
-        if (collision.gameObject.GetComponent<Rigidbody2D>())
+
+        Rigidbody2D collisionRB = collision.gameObject.GetComponent<Rigidbody2D>();
+
+        if (collisionRB)
         {
             Debug.Log("Found RigidBody2D");
-            collision.gameObject.GetComponent<Rigidbody2D>().AddForce(direction * collision.gameObject.GetComponent<Rigidbody2D>().mass, ForceMode2D.Force);
+            collisionRB.AddForce(direction * collisionRB.mass);
         }
     }
 
