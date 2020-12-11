@@ -4,90 +4,64 @@ using UnityEngine;
 
 public class ElevatorScript : MonoBehaviour
 {
-    public SpriteRenderer sr;
+    public ButtonScript bs;
 
-    public Sprite bOn;
-    public Sprite bOff;
-    public GameObject[] myButtons;
-    public GameObject[] myPlatforms;
-    public Vector2[] PlatStart;
-    public Vector2[] PlatEnd;
-    public float speed = .75f;
+    public GameObject button;
+    private Vector2 PlatStart;
+    public Vector2 PlatEnd;
+    public float speed = .1f;
 
-    private int lens = 0;
+    public float distBetween;
+    public float distBetween2;
     public bool flip = false;
-
-    private bool buttonPressed = false;
-    public float fraction = 0;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        sr = GetComponent<SpriteRenderer>();
-
+        bs = button.GetComponent<ButtonScript>();
+        PlatStart = this.transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < myButtons.Length; i++)
+        if (bs.buttonPressed)
         {
-            lens++;
-        }
 
+            distBetween = Vector2.Distance(this.transform.position, PlatEnd);
+            distBetween2 = Vector2.Distance(this.transform.position, PlatStart);
 
-        if (buttonPressed)
-        {
-            this.sr.sprite = bOn;
-
-            for (int i = 0; i < myButtons.Length; i++)
+            if (!flip)
             {
-                if (fraction < 1 && !flip)
-                {
-                    fraction += speed * Time.deltaTime;
-                    myPlatforms[i].gameObject.transform.position = Vector2.MoveTowards(PlatStart[i], PlatEnd[i], fraction);
-                }
+                this.gameObject.transform.position = (Vector3)Vector2.Lerp(this.gameObject.transform.position, PlatEnd, speed * Time.deltaTime);
 
-                else if (fraction > 1 && flip)
-                {
-                    fraction -= speed * Time.deltaTime;
-                    myPlatforms[i].gameObject.transform.position = Vector2.MoveTowards(PlatEnd[i], PlatStart[i], fraction);
-                }
-                    if (lens < i)
-                    {
-                        i = 0;
-                    }
-                }
+            }
 
-            if (fraction >= 1)
+            else if (flip)
+            {
+                this.gameObject.transform.position = (Vector3)Vector2.Lerp(this.gameObject.transform.position, PlatStart, speed * Time.deltaTime);
+            }
+
+            if (distBetween < .5f && !flip)
+            {
+                if (!flip)
+                {
+                    flip = true;
+                }
+            }
+
+            if (distBetween2 < .5f && flip)
             {
                 if (flip)
                 {
                     flip = false;
-                    fraction = 0;
                 }
-
-
-                else if (fraction <= 1)
-                {
-                    if (!flip)
-                    {
-                        flip = true;
-                        fraction = 2;
-                    }
-                }
-
             }
-        }
-        else
-        {
-            this.sr.sprite = bOff;
-        }
-    }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        buttonPressed = true;
+
+        }
     }
 }
+
+
