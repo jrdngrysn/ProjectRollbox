@@ -11,8 +11,8 @@ public class ElevatorScript : MonoBehaviour
     public Vector2 PlatEnd;
     public float speed = .1f;
 
-    public float distBetween;
-    public float distBetween2;
+    private float distBetween;
+    private float distBetween2;
     public bool flip = false;
     public bool isDoor = false;
 
@@ -36,7 +36,6 @@ public class ElevatorScript : MonoBehaviour
             if (!flip)
             {
                 this.gameObject.transform.position = (Vector3)Vector2.Lerp(this.gameObject.transform.position, PlatEnd, speed * Time.deltaTime);
-
             }
 
             else if (flip && !isDoor)
@@ -44,7 +43,7 @@ public class ElevatorScript : MonoBehaviour
                 this.gameObject.transform.position = (Vector3)Vector2.Lerp(this.gameObject.transform.position, PlatStart, speed * Time.deltaTime);
             }
 
-            if (distBetween < .5f && !flip)
+            if (distBetween < .4f && !flip)
             {
                 if (!flip)
                 {
@@ -52,7 +51,7 @@ public class ElevatorScript : MonoBehaviour
                 }
             }
 
-            if (distBetween2 < .5f && flip)
+            if (distBetween2 < .4f && flip)
             {
                 if (flip)
                 {
@@ -61,6 +60,11 @@ public class ElevatorScript : MonoBehaviour
             }
 
 
+        }
+
+        else if (!bs.buttonPressed && isDoor)
+        {
+            this.gameObject.transform.position = (Vector3)Vector2.Lerp(this.gameObject.transform.position, PlatStart, speed * Time.deltaTime);
         }
     }
 }

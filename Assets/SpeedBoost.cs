@@ -9,6 +9,7 @@ public class SpeedBoost : MonoBehaviour
     public Rigidbody2D rb;
     public GameObject button;
     public GameObject playerBall;
+    public bool alwaysOn = false;
 
     public Sprite sbOn;
     public Sprite sbOff;
@@ -16,6 +17,7 @@ public class SpeedBoost : MonoBehaviour
     public float thrust = 1f;
 
     private bool onBoost = false;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +30,7 @@ public class SpeedBoost : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (bs.buttonPressed)
+        if (bs.buttonPressed || alwaysOn)
         {
             this.sr.sprite = sbOn;
 
