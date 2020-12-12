@@ -14,6 +14,7 @@ public class ElevatorScript : MonoBehaviour
     public float distBetween;
     public float distBetween2;
     public bool flip = false;
+    public bool isDoor = false;
 
 
     // Start is called before the first frame update
@@ -38,7 +39,7 @@ public class ElevatorScript : MonoBehaviour
 
             }
 
-            else if (flip)
+            else if (flip && !isDoor)
             {
                 this.gameObject.transform.position = (Vector3)Vector2.Lerp(this.gameObject.transform.position, PlatStart, speed * Time.deltaTime);
             }

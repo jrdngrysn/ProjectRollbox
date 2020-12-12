@@ -8,6 +8,7 @@ public class ButtonScript : MonoBehaviour
     public Sprite bOn;
     public Sprite bOff;
     public bool buttonPressed = false;
+    public bool toggleButton = false;
 
 
     // Start is called before the first frame update
@@ -37,6 +38,9 @@ public class ButtonScript : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        buttonPressed = false;
+        if (!toggleButton)
+        {
+            buttonPressed = false;
+        }
     }
 }
