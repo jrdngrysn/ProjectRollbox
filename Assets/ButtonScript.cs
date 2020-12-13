@@ -4,43 +4,81 @@ using UnityEngine;
 
 public class ButtonScript : MonoBehaviour
 {
-    public SpriteRenderer sr;
-    public Sprite bOn;
-    public Sprite bOff;
+
+    [Header("Button State Info")]
     public bool buttonPressed = false;
     public bool toggleButton = false;
+    [Space]
+    [Tooltip("Objects that can push the button down")]
+    public LayerMask pressableObjects;
 
+    [Header("Components")]
+    public Transform buttonTop;
+    public Transform buttonMask;
+    BoxCollider2D hitbox;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        sr = GetComponent<SpriteRenderer>();
+        hitbox = GetComponent<BoxCollider2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
+        float targetY = 0;
+        float targetMaskY = -.2f;
+
         if (buttonPressed)
         {
-            this.sr.sprite = bOn;
+            targetY = -.25f;
+            targetMaskY = -.375f;
+        }
+
+        Vector2 cPos = buttonTop.localPosition;
+        cPos.y = Mathf.Lerp(cPos.y, targetY, .1f);
+
+        Vector2 cMaskPos = buttonMask.localPosition;
+        cMaskPos.y = Mathf.Lerp(cMaskPos.y, targetMaskY, .1f);
+
+        buttonTop.localPosition = cPos;
+        buttonMask.localPosition = cMaskPos;
+        CheckCollision();
+    }
+
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    buttonPressed = true;
+    //}
+
+    //private void OnTriggerExit2D(Collider2D collision)
+    //{
+    //    if (!toggleButton)
+    //    {
+    //        buttonPressed = false;
+    //    }
+    //}
+
+
+    void CheckCollision()
+    {
+        if (Physics2D.OverlapBox(transform.position, GetCollisionSize(), 0, pressableObjects))
+        {
+            buttonPressed = true;
         }
         else
         {
-            this.sr.sprite = bOff;
+            if (!toggleButton)
+            {
+                buttonPressed = false;
+            }
         }
     }
 
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    Vector2 GetCollisionSize()
     {
-        buttonPressed = true;
+        float xV = hitbox.size.x * transform.localScale.x;
+        float yV = hitbox.size.y * transform.localScale.y;
+        return new Vector2(xV, yV);
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (!toggleButton)
-        {
-            buttonPressed = false;
-        }
-    }
 }
