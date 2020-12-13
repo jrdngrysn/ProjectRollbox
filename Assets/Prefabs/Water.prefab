@@ -67,8 +67,8 @@ MonoBehaviour:
   changeSpeed: 0
   waterFlow: 0
   bubbleFlowMultiplier: 0
-  regBuoyancy: {fileID: 0}
-  playerBuoyancy: {fileID: 0}
+  regBuoyancy: {fileID: 2050941054333492908}
+  playerBuoyancy: {fileID: 2050941055112291428}
 --- !u!33 &2050941054333492897
 MeshFilter:
   m_ObjectHideFlags: 0

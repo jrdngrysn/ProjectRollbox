@@ -5,7 +5,7 @@ using UnityEngine;
 public class CrateInfo : MonoBehaviour
 {
     public BoxCollider touchHitbox;
-
+    public GameObject[] breakEffects;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -20,5 +20,10 @@ public class CrateInfo : MonoBehaviour
                 Destroy(this.gameObject);
             }
         }
+    }
+
+    public void BreakCrate()
+    {
+        Instantiate(breakEffects[Random.Range(0,breakEffects.Length)], transform.position, transform.rotation, null);
     }
 }

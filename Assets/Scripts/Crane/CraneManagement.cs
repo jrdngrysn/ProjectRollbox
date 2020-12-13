@@ -47,7 +47,7 @@ public class CraneManagement : MonoBehaviour
     public Transform crateHolder;
     List<CrateInfo> allDroppedCrates;
 
-    public GameObject crateObj;
+    public GameObject[] crateObjs;
     public float crateYOffset;
     [Space]
     public float respawnCrateTime;
@@ -121,7 +121,8 @@ public class CraneManagement : MonoBehaviour
 
         holdingCrate = true;
 
-        GameObject crate = Instantiate(crateObj, transform);
+        
+        GameObject crate = Instantiate(crateObjs[Random.Range(0,crateObjs.Length)], transform);
         heldCrate = crate.transform;
 
         FixedJoint2D fixedJoint = crate.AddComponent<FixedJoint2D>();
@@ -207,6 +208,7 @@ public class CraneManagement : MonoBehaviour
                 if (ExtensionMethods.TouchedHitbox(allDroppedCrates[i].touchHitbox, touchPos))
                 {
                     brokeCrate = true;
+                    allDroppedCrates[i].BreakCrate();
                     Destroy(allDroppedCrates[i].gameObject);
                     allDroppedCrates.Remove(allDroppedCrates[i]);
                     break;
@@ -220,14 +222,20 @@ public class CraneManagement : MonoBehaviour
 
     public void DeleteCrate(CrateInfo crate)
     {
+        crate.BreakCrate();
         allDroppedCrates.Remove(crate);
         Destroy(crate.gameObject);
     }
 
     public void ClearAllCrates()
     {
+        foreach (var crate in allDroppedCrates)
+        {
+            crate.BreakCrate();
+        }
         foreach (Transform child in crateHolder)
         {
+            
             allDroppedCrates = new List<CrateInfo>();
             Destroy(child.gameObject);
         }
