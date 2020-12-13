@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 5ea2af547f62a7f48891267e4ce17db0
+guid: ba522ae2cb4c0b340a31e9956a281187
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1655091072587480932
-    second: crateBroken_0
+      213: -3813957895643319183
+    second: doors_0
   - first:
-      213: -5292868249005188629
-    second: crateBroken_1
+      213: -5869873724788712370
+    second: doors_1
   - first:
-      213: 5115271155947105174
-    second: crateBroken_2
+      213: -7037842594108204779
+    second: doors_2
   - first:
-      213: -7378149210687985239
-    second: crateBroken_3
+      213: -7794273071397281860
+    second: doors_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -99,13 +99,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: crateBroken_0
+      name: doors_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 84.5
-        width: 84.5
-        height: 84.5
+        y: 0
+        width: 128
+        height: 400
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -113,20 +113,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c90c083407fe709e0800000000000000
-      internalID: -1655091072587480932
+      spriteID: 17432e94089121bc0800000000000000
+      internalID: -3813957895643319183
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crateBroken_1
+      name: doors_1
       rect:
         serializedVersion: 2
-        x: 84
-        y: 84.5
-        width: 84.5
-        height: 84.5
+        x: 128
+        y: 0
+        width: 128
+        height: 400
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,20 +134,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be91a1fce54fb86b0800000000000000
-      internalID: -5292868249005188629
+      spriteID: e4cd19d72f40a8ea0800000000000000
+      internalID: -5869873724788712370
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crateBroken_2
+      name: doors_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0.5
-        width: 84.5
-        height: 84.5
+        x: 256
+        y: 0
+        width: 128
+        height: 400
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,20 +155,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 69b6704b3081df640800000000000000
-      internalID: 5115271155947105174
+      spriteID: 5191111e27f845e90800000000000000
+      internalID: -7037842594108204779
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crateBroken_3
+      name: doors_3
       rect:
         serializedVersion: 2
-        x: 84
-        y: 0.5
-        width: 84.5
-        height: 84.5
+        x: 384
+        y: 0
+        width: 128
+        height: 400
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,8 +176,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a92d1d426c8b9990800000000000000
-      internalID: -7378149210687985239
+      spriteID: cbfd8f8ffed25d390800000000000000
+      internalID: -7794273071397281860
       vertices: []
       indices: 
       edges: []

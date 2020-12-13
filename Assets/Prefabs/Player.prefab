@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7622917618759068169}
   - component: {fileID: 6820935181576719850}
-  m_Layer: 2
+  m_Layer: 12
   m_Name: Pupil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 74f193a97e4648643963122bfc8b796c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -91,7 +91,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3840441484638931252}
   - component: {fileID: 3906972762417044391}
-  m_Layer: 2
+  m_Layer: 12
   m_Name: Eyelid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -150,7 +150,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 4
   m_Sprite: {fileID: 6931840540915894071, guid: 74bd9fbd289baa14685f814a42e96a61,
     type: 3}
   m_Color: {r: 0.9215687, g: 0.25882354, b: 0.4039216, a: 1}
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 9222601502702408340}
   - component: {fileID: 9222601502702408336}
   - component: {fileID: 8315120101508314403}
-  m_Layer: 2
+  m_Layer: 12
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -238,7 +238,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 28c14612b2a40104882f5b340e481409, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

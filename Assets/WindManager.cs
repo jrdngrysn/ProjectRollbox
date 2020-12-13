@@ -6,8 +6,11 @@ public class WindManager : MonoBehaviour
 {
 
     public float raycastDistance = 5f;
+    public float windSpeed = 5f;
 
-    private string playerTag;
+    private string playerTag = "Player";
+    public Rigidbody2D playerRB;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +27,7 @@ public class WindManager : MonoBehaviour
         {
             if (Hit.transform.gameObject.CompareTag(playerTag))
             {
-
+                playerRB.AddForce(transform.right * windSpeed, ForceMode2D.Impulse);
             }
         }
     }
