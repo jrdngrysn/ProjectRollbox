@@ -2,70 +2,116 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(BoxCollider2D))]
 public class ElevatorScript : MonoBehaviour
 {
-    public ButtonScript bs;
+    
 
-    public GameObject button;
-    private Vector2 PlatStart;
-    public Vector2 PlatEnd;
+    
+    ButtonScript bs;
+    [HideInInspector]
+    public Rigidbody2D rb;
+    [HideInInspector]
+    public Vector2 PlatStart;
+    
+   
+    [Header("Standard Settings")]
+    public GameObject usedButton;
+    public SpriteRenderer spriteRenderer;
     public float speed = .1f;
 
+    [Header("Custom Settings")]
+    [Tooltip("If true, doesn't require a button to activate, and is 'on' the entire time.")]
+    public bool alwaysActive;
+    [Tooltip("If true, moves back and forth between starting and ending position.")]
+    public bool oscillatesPosition;
+    [Tooltip("If true, platform will return to its original position when the button stops being pushed.")]
+    public bool retractsWhenTurnedOff;
+    [Space]
+    public Vector2 PlatEnd;
     private float distBetween;
     private float distBetween2;
-    public bool flip = false;
-    public bool isDoor = false;
+    bool flip = false;
 
 
-    // Start is called before the first frame update
-    void Start()
+    private void OnDrawGizmos()
     {
-        bs = button.GetComponent<ButtonScript>();
-        PlatStart = this.transform.position;
+        Gizmos.color = Color.magenta;
+        if (usedButton != null)
+        {
+            Gizmos.DrawRay(transform.position, (usedButton.transform.position-transform.position) - (usedButton.transform.position - transform.position).normalized*.25f);
+        }
+        Gizmos.color = Color.green;
+        Gizmos.DrawLine(PlatStart, PlatEnd);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(PlatStart, .1f);
+        Gizmos.DrawWireSphere(PlatEnd, .1f);
     }
 
-    // Update is called once per frame
-    void Update()
+    void Start()
     {
-        if (bs.buttonPressed)
-        {
+        
+        bs = usedButton.GetComponent<ButtonScript>();
+        rb = GetComponent<Rigidbody2D>();
+        PlatStart = rb.position;
+    }
 
-            distBetween = Vector2.Distance(this.transform.position, PlatEnd);
-            distBetween2 = Vector2.Distance(this.transform.position, PlatStart);
+    void FixedUpdate()
+    {
+        if (bs.buttonPressed || alwaysActive)
+        {
+            print("true");
+            distBetween = Vector2.Distance(rb.position, PlatEnd);
+            distBetween2 = Vector2.Distance(rb.position, PlatStart);
 
             if (!flip)
             {
-                this.gameObject.transform.position = (Vector3)Vector2.Lerp(this.gameObject.transform.position, PlatEnd, speed * Time.deltaTime);
+                Vector2 targetDeltaMove = PlatEnd - rb.position;
+                targetDeltaMove = targetDeltaMove.normalized * speed * Time.fixedDeltaTime;
+                rb.MovePosition(rb.position + targetDeltaMove);
+
+                spriteRenderer.transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, 1);
+            }
+            else if (flip && oscillatesPosition)
+            {
+                Vector2 targetDeltaMove = PlatStart - rb.position;
+                targetDeltaMove = targetDeltaMove.normalized * speed * Time.fixedDeltaTime;
+                rb.MovePosition(rb.position + targetDeltaMove);
+
+                spriteRenderer.transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, 1);
             }
 
-            else if (flip && !isDoor)
+            if (distBetween < .2f && !flip)
             {
-                this.gameObject.transform.position = (Vector3)Vector2.Lerp(this.gameObject.transform.position, PlatStart, speed * Time.deltaTime);
-            }
-
-            if (distBetween < .4f && !flip)
-            {
-                if (!flip)
-                {
                     flip = true;
-                }
             }
 
-            if (distBetween2 < .4f && flip)
+            if (distBetween2 < .2f && flip)
             {
-                if (flip)
-                {
                     flip = false;
-                }
             }
 
 
         }
-
-        else if (!bs.buttonPressed && isDoor)
+        else if (retractsWhenTurnedOff)
         {
-            this.gameObject.transform.position = (Vector3)Vector2.Lerp(this.gameObject.transform.position, PlatStart, speed * Time.deltaTime);
+            Vector2 targetDeltaMove = PlatStart - rb.position;
+            targetDeltaMove = targetDeltaMove.normalized * speed * Time.fixedDeltaTime;
+            rb.MovePosition(rb.position + targetDeltaMove);
+
+            spriteRenderer.transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, 1);
         }
+    }
+
+
+    public void CreateEndPosition()
+    {
+        if (rb == null)
+        {
+            rb = GetComponent<Rigidbody2D>();
+        }
+        PlatEnd = rb.position;
     }
 }
 
