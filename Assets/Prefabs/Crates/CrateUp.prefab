@@ -141,6 +141,8 @@ MonoBehaviour:
   touchHitbox: {fileID: 5594028393295446786}
   breakEffects:
   - {fileID: 5272635816127130248, guid: aedb4450a48d1864492866171f2208c8, type: 3}
+  holdingPlayer: 0
+  playerObj: {fileID: 0}
 --- !u!1 &8960242830324333506
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,7 +213,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 8d19c3ab67ddbc440aee247331f5aac7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
