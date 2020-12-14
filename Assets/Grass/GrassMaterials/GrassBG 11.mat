@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CloudScroll
-  m_Shader: {fileID: 4800000, guid: 1b071c3ec9e644e66b1afa1eb16e7501, type: 3}
+  m_Name: GrassBG 11
+  m_Shader: {fileID: 4800000, guid: 35b4a272f596c4d67a49192f2f4e7c41, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -55,8 +55,8 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _TextureSample0:
-        m_Texture: {fileID: 2800000, guid: 7b3cbe119e80b44c2ac4a6eb18b1808b, type: 3}
+    - _Texture0:
+        m_Texture: {fileID: 2800000, guid: d8b9e8e171c634548b3082ec45ca7d88, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _texcoord:
@@ -65,9 +65,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpScale: 1
-    - _Cutoff: 0.5
+    - _Cutoff: 0.95
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
+    - _Frequency: 0.01
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -77,7 +78,7 @@ Material:
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _Speed: 0.1
+    - _Sprite: 11
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
