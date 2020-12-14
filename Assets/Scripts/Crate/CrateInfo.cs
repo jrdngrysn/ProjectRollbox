@@ -6,6 +6,10 @@ public class CrateInfo : MonoBehaviour
 {
     public BoxCollider touchHitbox;
     public GameObject[] breakEffects;
+    [Space]
+    [Header("Player Crate")]
+    public bool holdingPlayer;
+    public GameObject playerObj;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -22,8 +26,20 @@ public class CrateInfo : MonoBehaviour
         }
     }
 
-    public void BreakCrate()
+    public void BreakCrate(bool reset)
     {
-        Instantiate(breakEffects[Random.Range(0,breakEffects.Length)], transform.position, transform.rotation, null);
+        if (reset && holdingPlayer)
+        {
+
+        }
+        else
+        {
+            Instantiate(breakEffects[Random.Range(0, breakEffects.Length)], transform.position, transform.rotation, null);
+            if (holdingPlayer)
+            {
+                Instantiate(playerObj, transform.position, Quaternion.identity);
+            }
+        }
+        
     }
 }

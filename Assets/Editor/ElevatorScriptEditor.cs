@@ -6,7 +6,14 @@ using UnityEditor;
 [CustomEditor(typeof(ElevatorScript))]
 public class ElevatorScriptEditor : Editor
 {
+    SerializedProperty startPos;
+    SerializedProperty endPos;
 
+    private void OnEnable()
+    {
+        startPos = serializedObject.FindProperty("PlatStart");
+        endPos = serializedObject.FindProperty("PlatEnd");
+    }
 
     public override void OnInspectorGUI()
     {
@@ -33,11 +40,12 @@ public class ElevatorScriptEditor : Editor
 
         if (!Application.isPlaying)
         {
-            scr.PlatStart = scr.rb.position;
-        
+            startPos.vector2Value = scr.rb.position;
+
+
             if (GUILayout.Button("Set Target Position"))
             {
-                scr.CreateEndPosition();
+                endPos.vector2Value = scr.rb.position;
             }
         }
 
@@ -45,6 +53,8 @@ public class ElevatorScriptEditor : Editor
 
         EditorGUILayout.LabelField("Start Position: " + scr.PlatStart);
         EditorGUILayout.LabelField("Target Position: " + scr.PlatEnd);
+
+        serializedObject.ApplyModifiedProperties();
 
     }
 }
