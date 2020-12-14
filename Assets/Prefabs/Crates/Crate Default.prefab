@@ -142,6 +142,8 @@ MonoBehaviour:
   breakEffects:
   - {fileID: 5502827608376235864, guid: 2afb30f0a25504344a4595af64902a35, type: 3}
   - {fileID: 1995275823538544941, guid: 5edf1155baf530b4797a52774b3870fc, type: 3}
+  holdingPlayer: 0
+  playerObj: {fileID: 0}
 --- !u!1 &9215664799976957923
 GameObject:
   m_ObjectHideFlags: 0
@@ -212,7 +214,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 1afda64a0606bcf4b858578ff36797bc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

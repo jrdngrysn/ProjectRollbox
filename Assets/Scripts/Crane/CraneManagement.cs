@@ -44,10 +44,14 @@ public class CraneManagement : MonoBehaviour
     float targetCraneX;
     [Space]
     [Header("Crate Management")]
+    public bool firstCratePlayer;
+    [Space]
     public Transform crateHolder;
     List<CrateInfo> allDroppedCrates;
 
     public GameObject[] crateObjs;
+    public GameObject playerCrateObj;
+        bool playerCrateDropped;
     public float crateYOffset;
     [Space]
     public float respawnCrateTime;
@@ -120,9 +124,16 @@ public class CraneManagement : MonoBehaviour
         }
 
         holdingCrate = true;
-
-        
-        GameObject crate = Instantiate(crateObjs[Random.Range(0,crateObjs.Length)], transform);
+        GameObject crate = null;
+        if (firstCratePlayer && !playerCrateDropped)
+        {
+            crate = Instantiate(playerCrateObj, transform);
+            playerCrateDropped = true;
+        }
+        else
+        {
+            crate = Instantiate(crateObjs[Random.Range(0, crateObjs.Length)], transform);
+        }
         heldCrate = crate.transform;
 
         FixedJoint2D fixedJoint = crate.AddComponent<FixedJoint2D>();
@@ -208,7 +219,7 @@ public class CraneManagement : MonoBehaviour
                 if (ExtensionMethods.TouchedHitbox(allDroppedCrates[i].touchHitbox, touchPos))
                 {
                     brokeCrate = true;
-                    allDroppedCrates[i].BreakCrate();
+                    allDroppedCrates[i].BreakCrate(false);
                     Destroy(allDroppedCrates[i].gameObject);
                     allDroppedCrates.Remove(allDroppedCrates[i]);
                     break;
@@ -222,7 +233,7 @@ public class CraneManagement : MonoBehaviour
 
     public void DeleteCrate(CrateInfo crate)
     {
-        crate.BreakCrate();
+        crate.BreakCrate(true);
         allDroppedCrates.Remove(crate);
         Destroy(crate.gameObject);
     }
@@ -231,13 +242,24 @@ public class CraneManagement : MonoBehaviour
     {
         foreach (var crate in allDroppedCrates)
         {
-            crate.BreakCrate();
+            crate.BreakCrate(true);
         }
         foreach (Transform child in crateHolder)
         {
             
             allDroppedCrates = new List<CrateInfo>();
             Destroy(child.gameObject);
+        }
+        if (firstCratePlayer)
+        {
+            playerCrateDropped = false;
+            
+            if (heldCrate != null)
+            {
+                Destroy(heldCrate.gameObject);
+            }
+
+            holdingCrate = false;
         }
     }
 }
