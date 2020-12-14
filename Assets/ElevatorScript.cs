@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(BoxCollider2D))]
@@ -96,6 +97,7 @@ public class ElevatorScript : MonoBehaviour
         }
         else if (retractsWhenTurnedOff)
         {
+            flip = false;
             Vector2 targetDeltaMove = PlatStart - rb.position;
             targetDeltaMove = targetDeltaMove.normalized * speed * Time.fixedDeltaTime;
             rb.MovePosition(rb.position + targetDeltaMove);
