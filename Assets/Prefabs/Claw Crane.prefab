@@ -373,8 +373,15 @@ MonoBehaviour:
   rightClawTransform: {fileID: 6014837373407255310}
   maxOpenAmount: 30
   ropeAnchor: {fileID: 6014837372938477894}
+  firstCratePlayer: 0
   crateHolder: {fileID: 6014837374117146172}
-  crateObj: {fileID: 7649967535476707772, guid: 9bb88f421dab91649a9445b38c9397f2,
+  crateObjs:
+  - {fileID: 7649967535476707772, guid: 9bb88f421dab91649a9445b38c9397f2, type: 3}
+  - {fileID: 6458341019055953177, guid: 37cc6f9ca7b5fae4caee8279e5092453, type: 3}
+  - {fileID: 6458341019055953177, guid: 37cc6f9ca7b5fae4caee8279e5092453, type: 3}
+  - {fileID: 7608717081081957789, guid: aac94de36b4aeaa4aa4419b2f0f70b8b, type: 3}
+  - {fileID: 7608717081081957789, guid: aac94de36b4aeaa4aa4419b2f0f70b8b, type: 3}
+  playerCrateObj: {fileID: 3872665379156693586, guid: 98c4f39c413024445b51a21a09352a5a,
     type: 3}
   crateYOffset: 1.2
   respawnCrateTime: 1

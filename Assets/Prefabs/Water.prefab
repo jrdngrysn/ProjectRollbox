@@ -55,10 +55,20 @@ MonoBehaviour:
     m_Bits: 1025
   waterDensity: 0.19
   waterYOffset: -0.108
+  outlineOpacity: 0
   topOutlineOffset: -0.009
   waveAmplitude: 0.04
   waveSpeed: 0.29
   waveDensity: 5
+  usesButtons: 0
+  isActivated: 0
+  startY: 0
+  activatedY: 0
+  changeSpeed: 0
+  waterFlow: 0
+  bubbleFlowMultiplier: 0
+  regBuoyancy: {fileID: 2050941054333492908}
+  playerBuoyancy: {fileID: 2050941055112291428}
 --- !u!33 &2050941054333492897
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -163,7 +173,7 @@ GameObject:
   - component: {fileID: 2050941055112291428}
   - component: {fileID: 2050941055112291429}
   m_Layer: 4
-  m_Name: GameObject
+  m_Name: Player Buoyancy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -194,7 +204,7 @@ BuoyancyEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 4
+    m_Bits: 4096
   m_SurfaceLevel: 0
   m_Density: 0.3
   m_LinearDrag: 1
