@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TNTScript : MonoBehaviour
 {
+    Rigidbody2D rb;
     private bool canExplode = false;
 
     public float radius = 5.0F;
@@ -13,7 +14,7 @@ public class TNTScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -21,7 +22,6 @@ public class TNTScript : MonoBehaviour
     {
         if (canExplode)
         {
-            timeRemaining = 2;
             if (timeRemaining > 0)
             {
                 timeRemaining -= Time.deltaTime;
@@ -29,6 +29,7 @@ public class TNTScript : MonoBehaviour
 
             if (timeRemaining < 0)
             {
+                rb.AddExplosionForce(power, this.transform.position, radius);
                 Destroy(this.gameObject);
             }
         }
@@ -36,11 +37,18 @@ public class TNTScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        ExplodeTNT();
+        Rigidbody2D collisionRB = collision.gameObject.GetComponent<Rigidbody2D>();
+
+        if (collisionRB)
+        {
+            ExplodeTNT();
+        }
+        
     }
 
     public void ExplodeTNT()
     {
        canExplode = true;
     }
+
 }
