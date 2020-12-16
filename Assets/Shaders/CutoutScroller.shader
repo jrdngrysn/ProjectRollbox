@@ -5,7 +5,7 @@ Shader "CutoutScroller"
 	Properties
 	{
 		_Cutoff( "Mask Clip Value", Float ) = 1
-		_Speed1("Speed", Range( 0 , 0.01)) = 0.82
+		_Speed1("Speed", Range( 0 , 0.01)) = 0.01
 		_TextureSample1("Texture Sample 0", 2D) = "white" {}
 		_Direction("Direction", Int) = -1
 		[HideInInspector] _texcoord( "", 2D ) = "white" {}
@@ -14,7 +14,7 @@ Shader "CutoutScroller"
 
 	SubShader
 	{
-		Tags{ "RenderType" = "TransparentCutout"  "Queue" = "Transparent+0" }
+		Tags{ "RenderType" = "TransparentCutout"  "Queue" = "Transparent+0" "IsEmissive" = "true"  }
 		Cull Back
 		CGPROGRAM
 		#include "UnityShaderVariables.cginc"
@@ -36,7 +36,7 @@ Shader "CutoutScroller"
 			float4 appendResult6 = (float4(( mulTime1 * _Direction ) , 0.0 , 0.0 , 0.0));
 			float2 uv_TexCoord3 = i.uv_texcoord + appendResult6.xy;
 			float4 tex2DNode5 = tex2D( _TextureSample1, uv_TexCoord3 );
-			o.Albedo = tex2DNode5.rgb;
+			o.Emission = tex2DNode5.rgb;
 			o.Alpha = 1;
 			clip( tex2DNode5.a - _Cutoff );
 		}
@@ -48,8 +48,8 @@ Shader "CutoutScroller"
 }
 /*ASEBEGIN
 Version=18600
-49;92;1413;797;1663.385;518.9104;1;True;False
-Node;AmplifyShaderEditor.RangedFloatNode;2;-1079.699,-186.8237;Inherit;False;Property;_Speed1;Speed;1;0;Create;True;0;0;False;0;False;0.82;0.01;0;0.01;0;1;FLOAT;0
+204;78;959;636;26.0025;508.8828;1;True;False
+Node;AmplifyShaderEditor.RangedFloatNode;2;-1245.699,-203.8237;Inherit;False;Property;_Speed1;Speed;1;0;Create;True;0;0;False;0;False;0.01;0.01;0;0.01;0;1;FLOAT;0
 Node;AmplifyShaderEditor.SimpleTimeNode;1;-923.5223,-135.5659;Inherit;False;1;0;FLOAT;1;False;1;FLOAT;0
 Node;AmplifyShaderEditor.IntNode;10;-1024.662,58.7637;Inherit;False;Property;_Direction;Direction;3;0;Create;True;2;Right;-1;Left;1;0;False;0;False;-1;-1;False;0;1;INT;0
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;7;-683.6622,-105.2363;Inherit;False;2;2;0;FLOAT;0;False;1;INT;0;False;1;FLOAT;0
@@ -65,7 +65,7 @@ WireConnection;6;0;7;0
 WireConnection;3;1;6;0
 WireConnection;4;0;3;1
 WireConnection;5;1;3;0
-WireConnection;0;0;5;0
+WireConnection;0;2;5;0
 WireConnection;0;10;5;4
 ASEEND*/
-//CHKSM=773D60444065CE06CA4588EB6D00686BF13C4EF2
+//CHKSM=FF9E900706B8D038E11883EBF18216CCEA998A81
