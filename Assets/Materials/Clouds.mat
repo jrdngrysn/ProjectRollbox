@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Clouds
-  m_Shader: {fileID: 4800000, guid: a465034d3a7c34e2da738d61e3046fcb, type: 3}
+  m_Shader: {fileID: 4800000, guid: 777de0ac22e774590b100a1aebb1cd73, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0

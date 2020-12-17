@@ -68,9 +68,9 @@ Material:
     - _OutlineWidth: 0
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
-    - _ScaleRatioA: 1
-    - _ScaleRatioB: 1
-    - _ScaleRatioC: 1
+    - _ScaleRatioA: 0.9375
+    - _ScaleRatioB: 0.76171875
+    - _ScaleRatioC: 0.76171875
     - _ScaleX: 1
     - _ScaleY: 1
     - _ShaderFlags: 0
@@ -114,9 +114,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: T_MediumSDF
   m_EditorClassIdentifier: 
-  hashCode: 0
+  hashCode: 1572486567
   material: {fileID: -5476452554680639877}
-  materialHashCode: 0
+  materialHashCode: -1212319193
   m_Version: 1.1.0
   m_SourceFontFileGUID: dba0859b9eb32c74f803a0d912c47952
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: dba0859b9eb32c74f803a0d912c47952,

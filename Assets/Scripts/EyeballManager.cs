@@ -112,7 +112,7 @@ public class EyeballManager : MonoBehaviour
     {
         if (CraneManagement.main != null)
         {
-            if (CraneManagement.main.heldCrate != null)
+            if (CraneManagement.main.heldCrate != null && !CraneManagement.main.dropDisabled)
             {
                 Vector2 newTarget = Vector2.zero;
                 float moveSpeed = .005f;
