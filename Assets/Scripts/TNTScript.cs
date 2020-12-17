@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class TNTScript : MonoBehaviour
 {
+   
     Rigidbody2D rb;
     private bool canExplode = false;
 
-    public float radius = 5.0F;
     public float power = 10.0F;
     public float timeRemaining = 2;
 
@@ -29,7 +29,7 @@ public class TNTScript : MonoBehaviour
 
             if (timeRemaining < 0)
             {
-                rb.AddExplosionForce(power, this.transform.position, radius);
+                CraneManagement.main.LaunchCrates(this.transform.position, power);
                 Destroy(this.gameObject);
             }
         }
@@ -41,14 +41,10 @@ public class TNTScript : MonoBehaviour
 
         if (collisionRB)
         {
-            ExplodeTNT();
+            canExplode = true;
         }
         
     }
 
-    public void ExplodeTNT()
-    {
-       canExplode = true;
-    }
 
 }

@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class CrateInfo : MonoBehaviour
 {
+    public Rigidbody2D rb;
     public BoxCollider touchHitbox;
     public GameObject[] breakEffects;
     [Space]
     [Header("Player Crate")]
     public bool holdingPlayer;
     public GameObject playerObj;
+
+    public void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

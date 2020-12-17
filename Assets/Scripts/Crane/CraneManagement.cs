@@ -69,6 +69,7 @@ public class CraneManagement : MonoBehaviour
     bool brokeACrate;
     bool shouldOpenClaws;
 
+
     private void Start()
     {
         clawRB = GetComponent<Rigidbody2D>();
@@ -267,5 +268,25 @@ public class CraneManagement : MonoBehaviour
 
             holdingCrate = false;
         }
+    }
+
+    public void LaunchCrates(Vector3 originPosition, float power)
+    {
+        foreach(CrateInfo crateInfo in allDroppedCrates)
+        {
+            Vector2 baseVal2 = new Vector2(1, 1);
+            Vector2 distCR = crateInfo.transform.position - originPosition;
+            if(Physics.Linecast(crateInfo.transform.position, originPosition, out RaycastHit hit))
+            {
+                if (hit.collider.tag == "tnt")
+                {
+                    crateInfo.rb.AddForce(baseVal2 / (distCR * power), ForceMode2D.Impulse);
+                }
+            }
+            
+        }
+        Vector2 baseVal = new Vector2(1, 1);
+        Vector2 distPL = PlayerManager.main.transform.position - originPosition;
+        PlayerManager.main.rb.AddForce(baseVal/(distPL * power), ForceMode2D.Impulse);
     }
 }
