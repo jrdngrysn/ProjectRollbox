@@ -21,7 +21,10 @@ public class ConveyorScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        bs = usedButton.GetComponent<ButtonScript>();
+        if (!alwaysActive)
+        {
+            bs = usedButton.GetComponent<ButtonScript>();
+        }
     }
 
     // Update is called once per frame
@@ -34,7 +37,7 @@ public class ConveyorScript : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (bs.buttonPressed || alwaysActive)
+        if (alwaysActive || bs.buttonPressed)
         {
 
             Debug.Log("In Collision with: " + collision.gameObject.name);
@@ -48,18 +51,10 @@ public class ConveyorScript : MonoBehaviour
                     Debug.Log("Found RigidBody2D");
                    
                     //collisionRB.AddForce(direction * collisionRB.mass);
-                    collisionRB.MovePosition(gameObject.transform.up * (speed * Time.fixedDeltaTime));
+                    collisionRB.MovePosition(collisionRB.position + (Vector2)(gameObject.transform.right * (speed * Time.fixedDeltaTime)));
                 }
             
         }
     }
 
-
-    //private void OnCollisionStay(Collision other)
-    //{
-    //    direction = transform.right;
-    //    direction = direction * speed;
-
-    //    other.rigidbody.AddForce(direction, ForceMode.Acceleration);
-    //}
 }

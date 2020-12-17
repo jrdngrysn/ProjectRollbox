@@ -143,6 +143,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button
       objectReference: {fileID: 0}
+    - target: {fileID: 6553682477891010616, guid: c85067aad98153d40bdb6f6ed0580602,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6553682477891010618, guid: c85067aad98153d40bdb6f6ed0580602,
         type: 3}
       propertyPath: m_RootOrder
@@ -555,9 +560,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e45db6473a5f34649a7d1fa42f42ddcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  usedButton: {fileID: 1562597118}
+  usedButton: {fileID: 0}
   speed: 0.5
-  alwaysActive: 0
+  alwaysActive: 1
 --- !u!50 &849243714
 Rigidbody2D:
   serializedVersion: 4
@@ -730,6 +735,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Elevator Small
+      objectReference: {fileID: 0}
+    - target: {fileID: 1726601871029624025, guid: 5ff14a7e58023cd449d7b8f955860fc1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ff14a7e58023cd449d7b8f955860fc1, type: 3}
