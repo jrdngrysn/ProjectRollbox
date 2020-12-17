@@ -16,6 +16,8 @@ public class ConveyorScript : MonoBehaviour
     [Tooltip("If true, doesn't require a button to activate, and is 'on' the entire time.")]
     public bool alwaysActive;
 
+    private string playerTag = "Player";
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,14 +40,17 @@ public class ConveyorScript : MonoBehaviour
             Debug.Log("In Collision with: " + collision.gameObject.name);
             direction = transform.right;
             direction = direction * speed;
+                Rigidbody2D collisionRB = collision.gameObject.GetComponent<Rigidbody2D>();
 
-            Rigidbody2D collisionRB = collision.gameObject.GetComponent<Rigidbody2D>();
-
-            if (collisionRB)
-            {
-                Debug.Log("Found RigidBody2D");
-                collisionRB.AddForce(direction * collisionRB.mass);
-            }
+                if (collisionRB)
+                {
+                    collisionRB.velocity = Vector2.zero;
+                    Debug.Log("Found RigidBody2D");
+                   
+                    //collisionRB.AddForce(direction * collisionRB.mass);
+                    collisionRB.MovePosition(gameObject.transform.up * (speed * Time.fixedDeltaTime));
+                }
+            
         }
     }
 
