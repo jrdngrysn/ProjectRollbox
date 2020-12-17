@@ -355,6 +355,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6553682477891010612, guid: c85067aad98153d40bdb6f6ed0580602,
+        type: 3}
+      propertyPath: pressableObjects.m_Bits
+      value: 4608
+      objectReference: {fileID: 0}
     - target: {fileID: 6553682477891010616, guid: c85067aad98153d40bdb6f6ed0580602,
         type: 3}
       propertyPath: m_Name
@@ -902,6 +907,21 @@ PrefabInstance:
         type: 3}
       propertyPath: PlatEnd.y
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908865358556449557, guid: e159358486dd77a40bfd835517c98798,
+        type: 3}
+      propertyPath: usedButton
+      value: 
+      objectReference: {fileID: 700309065}
+    - target: {fileID: 4908865358556449557, guid: e159358486dd77a40bfd835517c98798,
+        type: 3}
+      propertyPath: PlatStart.x
+      value: 3.083
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908865358556449557, guid: e159358486dd77a40bfd835517c98798,
+        type: 3}
+      propertyPath: PlatStart.y
+      value: -3.08
       objectReference: {fileID: 0}
     - target: {fileID: 4908865358556449559, guid: e159358486dd77a40bfd835517c98798,
         type: 3}
