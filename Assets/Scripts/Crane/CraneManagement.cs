@@ -14,6 +14,9 @@ public class CraneManagement : MonoBehaviour
 
     [Tooltip("If disabled, uses mouse/touchscreen sliding controls to move crane.")]
     public bool usesKeyboardControl;
+    public bool dropDisabled;
+    [Space]
+    public bool isMenuCrane;
 
     Vector3 inputPosition;
     [Space]
@@ -78,7 +81,7 @@ public class CraneManagement : MonoBehaviour
 
         bool brokeACrate = false;
         TryCrateBreaks(out brokeACrate);
-        if (Input.GetMouseButtonDown(0) && !brokeACrate)
+        if (Input.GetMouseButtonDown(0) && !brokeACrate && !dropDisabled)
         {
             shouldOpenClaws = true;
             DropCrate();
@@ -149,7 +152,10 @@ public class CraneManagement : MonoBehaviour
     {
         if (holdingCrate)
         {
-            CurrentLevelManager.main.AddCrate();
+            if (!isMenuCrane)
+            {
+                CurrentLevelManager.main.AddCrate();
+            }
 
             holdingCrate = false;
             Destroy(heldCrate.GetComponent<FixedJoint2D>());

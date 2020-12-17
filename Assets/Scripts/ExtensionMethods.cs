@@ -349,7 +349,7 @@ public static class ExtensionMethods
         float volumeMult = 1;
         if (SettingsManager.main != null)
         {
-            volumeMult = SettingsManager.main.volume;
+            volumeMult = SettingsManager.main.soundVolume;
         }
         aSrc.volume = (volume + Random.Range(-volumeVariability, volumeVariability))*volumeMult;
         aSrc.pitch = 1;
@@ -369,7 +369,7 @@ public static class ExtensionMethods
         float volumeMult = 1;
         if (SettingsManager.main != null)
         {
-            volumeMult = SettingsManager.main.volume;
+            volumeMult = SettingsManager.main.soundVolume;
         }
         aSrc.volume = (volume + Random.Range(-volumeVariability, volumeVariability)) * volumeMult;
         aSrc.pitch = pitch + Random.Range(-pitchVariability, pitchVariability);

@@ -9,6 +9,8 @@ public class LevelSelectManager : MonoBehaviour
     public LevelSelectButton[] allGrassyLevels;
     [Header("Level Select Palettes")]
     public Palette grassyPalette;
+    [Space]
+    public LineRenderer lineRenderer;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +27,7 @@ public class LevelSelectManager : MonoBehaviour
     void UpdateLevelDisplays()
     {
         UpdateUnlocks();
+        GenerateLineConnectors();
 
         int levelNo = 1;
         for (int i = 0; i < allGrassyLevels.Length; i++)
@@ -63,11 +66,25 @@ public class LevelSelectManager : MonoBehaviour
                 {
                     if (allGrassyLevels[i].unlocked)
                     {
+                        TransitionManager.main.Transition();
                         SceneManager.LoadScene(allGrassyLevels[i].levelToTravelTo.buildSceneNumber);
                         break;
                     }
                 }
             }
+        }
+    }
+
+
+    void GenerateLineConnectors()
+    {
+        int totalLevels = allGrassyLevels.Length;
+        lineRenderer.positionCount = totalLevels;
+        for (int i = 0; i < allGrassyLevels.Length; i++)
+        {
+            Vector3 tPos = allGrassyLevels[i].transform.position;
+            tPos.z = .1f;
+            lineRenderer.SetPosition(i, tPos);
         }
     }
 }
