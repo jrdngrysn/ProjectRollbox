@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class TNTScript : MonoBehaviour
 {
+   
+    Rigidbody2D rb;
     private bool canExplode = false;
 
-    public float radius = 5.0F;
     public float power = 10.0F;
     public float timeRemaining = 2;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -21,7 +22,6 @@ public class TNTScript : MonoBehaviour
     {
         if (canExplode)
         {
-            timeRemaining = 2;
             if (timeRemaining > 0)
             {
                 timeRemaining -= Time.deltaTime;
@@ -29,6 +29,7 @@ public class TNTScript : MonoBehaviour
 
             if (timeRemaining < 0)
             {
+                CraneManagement.main.LaunchCrates(this.transform.position, power);
                 Destroy(this.gameObject);
             }
         }
@@ -36,11 +37,14 @@ public class TNTScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        ExplodeTNT();
+        Rigidbody2D collisionRB = collision.gameObject.GetComponent<Rigidbody2D>();
+
+        if (collisionRB)
+        {
+            canExplode = true;
+        }
+        
     }
 
-    public void ExplodeTNT()
-    {
-       canExplode = true;
-    }
+
 }
