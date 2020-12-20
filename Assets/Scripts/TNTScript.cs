@@ -11,6 +11,9 @@ public class TNTScript : MonoBehaviour
     public float power = 10.0F;
     public float timeRemaining = 2;
 
+    public ParticleSystem explosion1;
+    public ParticleSystem explosion2;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +33,8 @@ public class TNTScript : MonoBehaviour
             if (timeRemaining < 0)
             {
                 CraneManagement.main.LaunchCrates(this.transform.position, power);
+                explosion1.Play();
+                explosion2.Play();
                 Destroy(this.gameObject);
             }
         }
