@@ -730,6 +730,11 @@ PrefabInstance:
       propertyPath: PlatStart.y
       value: -1.34
       objectReference: {fileID: 0}
+    - target: {fileID: 4908865358556449557, guid: e159358486dd77a40bfd835517c98798,
+        type: 3}
+      propertyPath: retractsWhenTurnedOff
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4908865358556449559, guid: e159358486dd77a40bfd835517c98798,
         type: 3}
       propertyPath: m_RootOrder
