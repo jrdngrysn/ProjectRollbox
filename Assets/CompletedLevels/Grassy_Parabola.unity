@@ -177,7 +177,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: -3039244518726627981, guid: d8b9e8e171c634548b3082ec45ca7d88,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -328,7 +328,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: -3039244518726627981, guid: d8b9e8e171c634548b3082ec45ca7d88,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -410,7 +410,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: -709558620266382983, guid: d8b9e8e171c634548b3082ec45ca7d88,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -492,7 +492,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: -9110564611270815524, guid: d8b9e8e171c634548b3082ec45ca7d88,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -574,7 +574,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 64262ad787ac044d198f1840cfc5e4d4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1273,7 +1273,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: -7462216993691658713, guid: d8b9e8e171c634548b3082ec45ca7d88,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1748,7 +1748,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2072273298}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.74, y: -0.54, z: 5}
+  m_LocalPosition: {x: 0.74, y: -0.54, z: 10}
   m_LocalScale: {x: 28, y: 15, z: 30}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1863,7 +1863,7 @@ PrefabInstance:
     - target: {fileID: 3479186522494503014, guid: 440a0684d06624304acb130bc69acd5f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3479186522494503014, guid: 440a0684d06624304acb130bc69acd5f,
         type: 3}
