@@ -133,10 +133,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: TNT
       objectReference: {fileID: 0}
+    - target: {fileID: 615455982358737169, guid: e0beeba0f65daa54b9fa3e865cc0deac,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 615455982358737171, guid: e0beeba0f65daa54b9fa3e865cc0deac,
         type: 3}
       propertyPath: power
-      value: 0.008
+      value: 0.003
       objectReference: {fileID: 0}
     - target: {fileID: 615455982358737173, guid: e0beeba0f65daa54b9fa3e865cc0deac,
         type: 3}
@@ -1226,7 +1231,8 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 1.2527069, y: 4.8376966}
+    - - {x: 0.92301273, y: 2.9153488}
+      - {x: 0.74672705, y: 4.9009447}
       - {x: 9.592414, y: 4.773615}
       - {x: 9.5525675, y: 5.694868}
       - {x: -9.721207, y: 5.629526}
@@ -1239,7 +1245,7 @@ PolygonCollider2D:
       - {x: -7.476018, y: 0.4707937}
       - {x: -7.5441504, y: -0.2967267}
       - {x: 0.12941921, y: -0.26976448}
-      - {x: 0.9966682, y: 0.86166376}
+      - {x: 0.5117719, y: 0.9249112}
 --- !u!1001 &1763128540
 PrefabInstance:
   m_ObjectHideFlags: 0

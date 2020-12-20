@@ -22,7 +22,11 @@ public class SpeedBoost : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        bs = button.GetComponent<ButtonScript>();
+        if (!alwaysOn)
+        {
+            bs = button.GetComponent<ButtonScript>();
+        }
+
         sr = GetComponent<SpriteRenderer>();
         rb = playerBall.GetComponent<Rigidbody2D>();
     }
@@ -30,7 +34,7 @@ public class SpeedBoost : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (bs.buttonPressed || alwaysOn)
+        if (alwaysOn || bs.buttonPressed)
         {
             this.sr.sprite = sbOn;
 

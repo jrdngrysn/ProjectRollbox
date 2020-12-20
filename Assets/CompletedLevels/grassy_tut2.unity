@@ -179,7 +179,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -3
-  m_Sprite: {fileID: 21300000, guid: 4bdc9dc03a9004141b090d0255b5bb5a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 31e8e2d2f7df876489a4e388c55d89ab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -237,7 +237,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84b2ef853855db741a6544966ea3efeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 5
   power: 10
   timeRemaining: 2
 --- !u!1001 &457394477
@@ -344,7 +343,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 564926814}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.25, y: -2.69, z: 0}
+  m_LocalPosition: {x: 6.29, y: -1.87, z: 0}
   m_LocalScale: {x: 1.0782818, y: 1.0782818, z: 1.0782818}
   m_Children: []
   m_Father: {fileID: 225747000}
@@ -563,7 +562,7 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.5}
+  m_Offset: {x: 0, y: 0.54}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -575,19 +574,22 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -8.053826, y: -2.7281811}
+    - - {x: -2.9918742, y: -2.7283704}
+      - {x: -8.053826, y: -2.7281811}
       - {x: -9.21997, y: -1.8896542}
       - {x: -10.59848, y: -0.39491427}
       - {x: -9.6053, y: -5.416964}
       - {x: 9.620483, y: -5.382792}
       - {x: 12.107037, y: -2.6597784}
-      - {x: 3.3435593, y: -2.6997113}
-      - {x: 3.3887947, y: -4.471534}
-      - {x: 1.2046101, y: -4.4894004}
+      - {x: 11.265101, y: 1.285213}
+      - {x: 8.025303, y: -2.8204603}
+      - {x: 3.365001, y: -2.8069212}
+      - {x: 3.3781528, y: -4.6098776}
+      - {x: 1.1939684, y: -4.6064606}
       - {x: 1.1852498, y: -2.744803}
       - {x: -0.7924245, y: -2.7784946}
-      - {x: -0.7860558, y: -4.501306}
-      - {x: -2.8884397, y: -4.5161233}
+      - {x: -0.7860557, y: -4.586441}
+      - {x: -2.9310071, y: -4.569333}
       - {x: -2.920515, y: -2.7500026}
 --- !u!1001 &1145970037
 PrefabInstance:
