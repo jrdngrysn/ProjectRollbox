@@ -465,7 +465,7 @@ PrefabInstance:
     - target: {fileID: 6553682477891010618, guid: c85067aad98153d40bdb6f6ed0580602,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.71
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 6553682477891010618, guid: c85067aad98153d40bdb6f6ed0580602,
         type: 3}
@@ -608,7 +608,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 984386450}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.25, y: -2.69, z: 0}
+  m_LocalPosition: {x: 7.3, y: -2.69, z: 0}
   m_LocalScale: {x: 1.0782818, y: 1.0782818, z: 1.0782818}
   m_Children: []
   m_Father: {fileID: 222507359}
@@ -946,6 +946,7 @@ GameObject:
   - component: {fileID: 1773743206}
   - component: {fileID: 1773743208}
   - component: {fileID: 1773743207}
+  - component: {fileID: 1773743209}
   m_Layer: 0
   m_Name: Collision
   m_TagString: Untagged
@@ -980,7 +981,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 8.367029, y: -4.6}
+  m_Offset: {x: 8.367029, y: -4.27}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1018,12 +1019,38 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 2.0593815, y: -2.8583806}
+    - - {x: 2.0593815, y: -2.7935932}
       - {x: -7.879148, y: -2.8262403}
       - {x: -9.022883, y: -2.0344162}
       - {x: -11.1214, y: 1.2266926}
       - {x: -11.058369, y: -5.495884}
       - {x: 2.063596, y: -5.3957043}
+--- !u!61 &1773743209
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773743205}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -2.9586082, y: -4.394722}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 10.199765, y: 2.6628666}
+  m_EdgeRadius: 0
 --- !u!1 &1859780150 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6553682477891010616, guid: c85067aad98153d40bdb6f6ed0580602,
@@ -1062,7 +1089,7 @@ PrefabInstance:
     - target: {fileID: 8785541253826922050, guid: 71a5ea3af30419f48bde888fe2273ba1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.22
+      value: -3.03
       objectReference: {fileID: 0}
     - target: {fileID: 8785541253826922050, guid: 71a5ea3af30419f48bde888fe2273ba1,
         type: 3}
@@ -1124,6 +1151,11 @@ PrefabInstance:
       propertyPath: button
       value: 
       objectReference: {fileID: 1859780150}
+    - target: {fileID: 8785541253826922076, guid: 71a5ea3af30419f48bde888fe2273ba1,
+        type: 3}
+      propertyPath: thrust
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8785541253826922076, guid: 71a5ea3af30419f48bde888fe2273ba1,
         type: 3}
       propertyPath: playerBall

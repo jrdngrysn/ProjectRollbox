@@ -177,7 +177,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -3
-  m_Sprite: {fileID: 21300000, guid: 6469d15c126dd474d8f6bd042e1fc59b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 313da45773e362b48b4588ca76eee69b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -224,12 +224,12 @@ PrefabInstance:
     - target: {fileID: 8785541253826922050, guid: 71a5ea3af30419f48bde888fe2273ba1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.64
+      value: -0.12
       objectReference: {fileID: 0}
     - target: {fileID: 8785541253826922050, guid: 71a5ea3af30419f48bde888fe2273ba1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.55
+      value: -1.94
       objectReference: {fileID: 0}
     - target: {fileID: 8785541253826922050, guid: 71a5ea3af30419f48bde888fe2273ba1,
         type: 3}
@@ -285,6 +285,11 @@ PrefabInstance:
         type: 3}
       propertyPath: button
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8785541253826922076, guid: 71a5ea3af30419f48bde888fe2273ba1,
+        type: 3}
+      propertyPath: thrust
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8785541253826922076, guid: 71a5ea3af30419f48bde888fe2273ba1,
         type: 3}
@@ -505,6 +510,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6553682477891010612, guid: c85067aad98153d40bdb6f6ed0580602,
+        type: 3}
+      propertyPath: pressableObjects.m_Bits
+      value: 4608
+      objectReference: {fileID: 0}
     - target: {fileID: 6553682477891010613, guid: c85067aad98153d40bdb6f6ed0580602,
         type: 3}
       propertyPath: m_Size.x
@@ -538,12 +548,12 @@ PrefabInstance:
     - target: {fileID: 6553682477891010618, guid: c85067aad98153d40bdb6f6ed0580602,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.92
+      value: 2.18
       objectReference: {fileID: 0}
     - target: {fileID: 6553682477891010618, guid: c85067aad98153d40bdb6f6ed0580602,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.97
+      value: -2.36
       objectReference: {fileID: 0}
     - target: {fileID: 6553682477891010618, guid: c85067aad98153d40bdb6f6ed0580602,
         type: 3}
@@ -723,7 +733,7 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -1.15}
+  m_Offset: {x: 0, y: -0.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -967,7 +977,7 @@ PrefabInstance:
     - target: {fileID: 4908865358556449557, guid: e159358486dd77a40bfd835517c98798,
         type: 3}
       propertyPath: speed
-      value: 10
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4908865358556449557, guid: e159358486dd77a40bfd835517c98798,
         type: 3}
@@ -987,7 +997,27 @@ PrefabInstance:
     - target: {fileID: 4908865358556449557, guid: e159358486dd77a40bfd835517c98798,
         type: 3}
       propertyPath: PlatEnd.y
-      value: -1.45
+      value: -0.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908865358556449557, guid: e159358486dd77a40bfd835517c98798,
+        type: 3}
+      propertyPath: usedButton
+      value: 
+      objectReference: {fileID: 1141246903}
+    - target: {fileID: 4908865358556449557, guid: e159358486dd77a40bfd835517c98798,
+        type: 3}
+      propertyPath: PlatStart.x
+      value: 3.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908865358556449557, guid: e159358486dd77a40bfd835517c98798,
+        type: 3}
+      propertyPath: PlatStart.y
+      value: 2.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908865358556449557, guid: e159358486dd77a40bfd835517c98798,
+        type: 3}
+      propertyPath: retractsWhenTurnedOff
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4908865358556449559, guid: e159358486dd77a40bfd835517c98798,
         type: 3}
@@ -1012,7 +1042,7 @@ PrefabInstance:
     - target: {fileID: 4908865358556449559, guid: e159358486dd77a40bfd835517c98798,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.15
+      value: 2.14
       objectReference: {fileID: 0}
     - target: {fileID: 4908865358556449559, guid: e159358486dd77a40bfd835517c98798,
         type: 3}
