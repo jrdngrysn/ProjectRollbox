@@ -338,7 +338,7 @@ PolygonCollider2D:
       - {x: -10.59848, y: -0.39491427}
       - {x: -9.6053, y: -5.416964}
       - {x: 9.620483, y: -5.382792}
-      - {x: 12.189213, y: -2.8515234}
+      - {x: 12.268049, y: -2.6938465}
       - {x: 1.2126416, y: -2.8269794}
 --- !u!61 &284484783
 BoxCollider2D:
@@ -1227,7 +1227,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84b2ef853855db741a6544966ea3efeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 5
   power: 10
   timeRemaining: 2
 --- !u!212 &1593135348
@@ -1269,7 +1268,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -3
-  m_Sprite: {fileID: 21300000, guid: 4e61ab3a59f2ec0469f4e890d6277779, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 41625e95467273a45a519395c4089117, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
