@@ -6,7 +6,7 @@ public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager main;
 
-    Rigidbody2D rb;
+    public Rigidbody2D rb;
     Vector3 initPos;
 
     [Tooltip("Max speed the player can be moving on level complete platform to win.")]
@@ -17,7 +17,7 @@ public class PlayerManager : MonoBehaviour
         main = this;
     }
 
-    private void Start()
+    public void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         initPos = rb.position;

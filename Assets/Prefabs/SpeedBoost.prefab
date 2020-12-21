@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 8785541253826922077}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.4, y: -2.91, z: 0}
-  m_LocalScale: {x: 1, y: 0.7641461, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -72,7 +72,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 56e9789012314f042beeca947003a3b4, type: 3}
+  m_Sprite: {fileID: 5153999434836208509, guid: be8440c19470a6647b8b627704d3fc5b,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,8 +101,9 @@ MonoBehaviour:
   rb: {fileID: 0}
   button: {fileID: 0}
   playerBall: {fileID: 0}
-  sbOn: {fileID: 21300000, guid: 2fb5cf77d25cccf44854a67ae7faf057, type: 3}
-  sbOff: {fileID: 21300000, guid: 56e9789012314f042beeca947003a3b4, type: 3}
+  alwaysOn: 0
+  sbOn: {fileID: -255650180744317295, guid: be8440c19470a6647b8b627704d3fc5b, type: 3}
+  sbOff: {fileID: 5153999434836208509, guid: be8440c19470a6647b8b627704d3fc5b, type: 3}
   thrust: 2
 --- !u!61 &8785541253826922049
 BoxCollider2D:
@@ -120,7 +122,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.14, y: 1.21}
+    oldSize: {x: 2.93, y: 2.11}
     newSize: {x: 2.14, y: 1.21}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

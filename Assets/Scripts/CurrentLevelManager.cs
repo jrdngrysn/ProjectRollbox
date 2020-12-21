@@ -16,6 +16,8 @@ public class CurrentLevelManager : MonoBehaviour
     public bool levelComplete;
     public SpriteRenderer levelCompleteDisplay;
 
+    public TNTScript tnt;
+
     private void Awake()
     {
         main = this;
@@ -43,6 +45,11 @@ public class CurrentLevelManager : MonoBehaviour
         if (PlayerManager.main != null)
         {
             PlayerManager.main.ResetPlayer();
+        }
+
+        if (tnt != null)
+        {
+            tnt.gameObject.SetActive(true);
         }
 
         totalCratesDropped = 0;

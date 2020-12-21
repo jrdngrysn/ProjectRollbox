@@ -102,7 +102,7 @@ public class ElevatorScript : MonoBehaviour
             targetDeltaMove = targetDeltaMove.normalized * speed * Time.fixedDeltaTime;
             rb.MovePosition(rb.position + targetDeltaMove);
 
-            spriteRenderer.transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, 1);
+            spriteRenderer.transform.localScale = new Vector3(-Mathf.Abs(1), 1, 1);
         }
     }
 
