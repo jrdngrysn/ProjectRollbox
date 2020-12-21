@@ -9,7 +9,10 @@ public class TNTScript : MonoBehaviour
     private bool canExplode = false;
 
     public float power = 10.0F;
-    public float timeRemaining = 2;
+    public float timeRemainingMax = .05f;
+
+    private float timeRemaining = 2;
+
 
     public ParticleSystem explosion1;
     public ParticleSystem explosion2;
@@ -18,6 +21,7 @@ public class TNTScript : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        timeRemaining = timeRemainingMax;
     }
 
     // Update is called once per frame
@@ -35,7 +39,10 @@ public class TNTScript : MonoBehaviour
                 CraneManagement.main.LaunchCrates(this.transform.position, power);
                 explosion1.Play();
                 explosion2.Play();
-                Destroy(this.gameObject);
+                //Destroy(this.gameObject);
+                gameObject.SetActive(false);
+                canExplode = false;
+                timeRemaining = timeRemainingMax;
             }
         }
     }

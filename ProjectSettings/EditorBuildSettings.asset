@@ -38,4 +38,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/CompletedLevels/Grassy_Parabola.unity
     guid: 2533a5f07a1c7487bbc771ed3d5ee968
+  - enabled: 1
+    path: Assets/CompletedLevels/Cave_Intro.unity
+    guid: ef300ca5d60774428bc361c76a4af91a
+  - enabled: 1
+    path: Assets/CompletedLevels/cave_topbutton.unity
+    guid: 1ab57932efb3f2f43a55d6e5148f0322
+  - enabled: 1
+    path: Assets/CompletedLevels/cave_tntspin.unity
+    guid: 77b8378c2431a644896475895d6df921
+  - enabled: 1
+    path: Assets/CompletedLevels/Cave_TNTSpin2.unity
+    guid: c1957eb240ea445b1b3a7d7b5f944ee6
+  - enabled: 1
+    path: Assets/CompletedLevels/Test_IceWater.unity
+    guid: 36bf6bc00dff3434c92b192c3dc6c548
   m_configObjects: {}
