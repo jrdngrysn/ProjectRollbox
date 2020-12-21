@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Cave_TNTSpin2
   m_EditorClassIdentifier: 
   buildSceneNumber: 12
-  nextLevel: {fileID: 0}
+  nextLevel: {fileID: 11400000, guid: 8ac6750ccbf2046e882d4f4cbc28aef0, type: 2}
   maxCratesFor3Stars: 2
   maxCratesFor2Stars: 3
   levelCompletionData:
-    completed: 0
-    cratesUsed: 0
-    earnedStars: 0
+    completed: 1
+    cratesUsed: 2
+    earnedStars: 3

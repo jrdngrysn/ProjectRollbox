@@ -17,12 +17,14 @@ public class ButtonScript : MonoBehaviour
     public Transform buttonMask;
     BoxCollider2D hitbox;
 
+    bool pressedStore;
+
     private void Start()
     {
         hitbox = GetComponent<BoxCollider2D>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         float targetY = 0;
         float targetMaskY = -.2f;
@@ -42,6 +44,17 @@ public class ButtonScript : MonoBehaviour
         buttonTop.localPosition = cPos;
         buttonMask.localPosition = cMaskPos;
         CheckCollision();
+
+
+        if (buttonPressed != pressedStore)
+        {
+            if (SFXManager.main)
+            {
+                SFXManager.main.ButtonOnOff(buttonPressed);
+            }
+        }
+
+        pressedStore = buttonPressed;
     }
 
     //private void OnTriggerEnter2D(Collider2D collision)

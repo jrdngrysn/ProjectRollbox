@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class LevelSelectManager : MonoBehaviour
 {
+    public static LevelSelectManager main;
+
     [Header("Level Select")]
     public LevelSelectButton[] allGrassyLevels;
     [Header("Level Select Palettes")]
@@ -13,21 +15,29 @@ public class LevelSelectManager : MonoBehaviour
     public LineRenderer lineRenderer;
 
     // Start is called before the first frame update
+
+    private void Awake()
+    {
+        main = this;
+    }
     void Start()
     {
+        GenerateLineConnectors();
         UpdateLevelDisplays();
+        LoadData(true);
     }
 
     // Update is called once per frame
     void Update()
     {
         DetectClicks();
+        UpdateLevelDisplays();
     }
 
     void UpdateLevelDisplays()
     {
         UpdateUnlocks();
-        GenerateLineConnectors();
+        
 
         int levelNo = 1;
         for (int i = 0; i < allGrassyLevels.Length; i++)
@@ -75,6 +85,49 @@ public class LevelSelectManager : MonoBehaviour
         }
     }
 
+
+    public void LoadData(bool shouldSave)
+    {
+        foreach (LevelSelectButton levelSelect in allGrassyLevels)
+        {
+            LevelSelectInfo lSelect = levelSelect.levelToTravelTo;
+            string loadString = "LevelData_" + lSelect.buildSceneNumber.ToString();
+            if (ES3.KeyExists(loadString))
+            {
+                LevelSaveData loadedData = ES3.Load<LevelSaveData>(loadString);
+                lSelect.levelCompletionData = new LevelCompletionData();
+                lSelect.levelCompletionData.completed = loadedData.completed;
+                lSelect.levelCompletionData.earnedStars = loadedData.stars;
+                lSelect.levelCompletionData.cratesUsed = loadedData.cratesDropped;
+            }
+            else
+            {
+                lSelect.levelCompletionData = new LevelCompletionData();
+                lSelect.levelCompletionData.completed = false;
+                lSelect.levelCompletionData.earnedStars = 0;
+                lSelect.levelCompletionData.cratesUsed = 0;
+                if (shouldSave)
+                {
+                    SaveProgress(false, 0, 0, true, lSelect);
+                }
+            }
+
+            levelSelect.UpdateStars(grassyPalette);
+        }
+        UpdateUnlocks();
+    }
+
+    public void SaveProgress(bool completed, int droppedCrates, int stars, bool shouldLoad, LevelSelectInfo lSave)
+    {
+        LoadData(false);
+        string saveString = "LevelData_" + lSave.buildSceneNumber.ToString();
+        LevelSaveData lSaveData = new LevelSaveData();
+        lSaveData.stars = stars;
+        lSaveData.cratesDropped = droppedCrates;
+        lSaveData.completed = completed;
+
+        ES3.Save<LevelSaveData>(saveString, lSaveData);
+    }
 
     void GenerateLineConnectors()
     {

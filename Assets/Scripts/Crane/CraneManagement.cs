@@ -227,10 +227,25 @@ public class CraneManagement : MonoBehaviour
                 {
                     brokeCrate = true;
                     allDroppedCrates[i].BreakCrate(false);
+                    if (SFXManager.main)
+                    {
+                        SFXManager.main.CrateBreakSound();
+                    }
                     Destroy(allDroppedCrates[i].gameObject);
                     allDroppedCrates.Remove(allDroppedCrates[i]);
                     break;
 
+                }
+            }
+        }
+
+        if (!brokeCrate)
+        {
+            if (CurrentLevelManager.main)
+            {
+                if (ExtensionMethods.TouchedHitbox(CurrentLevelManager.main.resetButton, touchPos))
+                {
+                    brokeCrate = true;
                 }
             }
         }
@@ -280,13 +295,13 @@ public class CraneManagement : MonoBehaviour
             {
                 if (hit.collider.tag == "tnt")
                 {
-                    crateInfo.rb.AddForce(baseVal2 / (distCR * power), ForceMode2D.Impulse);
+                    crateInfo.rb.AddForce(power * distCR.normalized / Mathf.Pow(distCR.magnitude,2), ForceMode2D.Impulse);
                 }
             }
             
         }
         Vector2 baseVal = new Vector2(1, 1);
         Vector2 distPL = PlayerManager.main.transform.position - originPosition;
-        PlayerManager.main.rb.AddForce(baseVal/(distPL * power), ForceMode2D.Impulse);
+        PlayerManager.main.rb.AddForce(power * distPL.normalized /Mathf.Pow(distPL.magnitude,2f), ForceMode2D.Impulse);
     }
 }

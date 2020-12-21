@@ -9,7 +9,16 @@ public class SFXManager : MonoBehaviour
     public float masterVolume;
     public AudioSource[] shortAudioSources;
         int shortSrcIndex;
-
+    [Space]
+    [Header("Game Sounds")]
+    public AudioClip[] playerHit;
+    public Vector4 remapPlayerHitVol;
+    public AudioClip[] crateHit;
+    public Vector4 remapCrateHitVol;
+    public AudioClip[] crateBreak;
+    [Space]
+    public AudioClip buttonOn;
+    public AudioClip buttonOff;
 
     public enum SelectSound
     {
@@ -17,6 +26,7 @@ public class SFXManager : MonoBehaviour
         HardClick,
         GoBack
     }
+    [Header("UI Sounds")]
     public AudioClip[] selectSounds;
 
     private void Awake()
@@ -36,9 +46,37 @@ public class SFXManager : MonoBehaviour
     public void PlaySelectSound(SelectSound selectSound, float vol)
     {
         shortSrcIndex = (shortSrcIndex + 1) % shortAudioSources.Length;
-        shortAudioSources[shortSrcIndex].PlaySound(selectSounds[(int)selectSound], vol, .05f);
+        shortAudioSources[shortSrcIndex].PlaySound(selectSounds[(int)selectSound], vol*.6f, .05f);
     }
 
+    public void CrateBreakSound()
+    {
+        shortSrcIndex = (shortSrcIndex + 1) % shortAudioSources.Length;
+        shortAudioSources[shortSrcIndex].PlaySound(crateBreak[Random.Range(0,crateBreak.Length)], .75f, .05f);
+    }
+
+    public void PlayerHitSound(float magnitude)
+    {
+        float targetVolume = magnitude.Remap(remapPlayerHitVol.x, remapPlayerHitVol.y, remapPlayerHitVol.z, remapPlayerHitVol.w);
+        targetVolume = Mathf.Clamp(targetVolume, remapPlayerHitVol.z, remapPlayerHitVol.w);
+        shortSrcIndex = (shortSrcIndex + 1) % shortAudioSources.Length;
+        shortAudioSources[shortSrcIndex].PlaySound(playerHit[Random.Range(0,playerHit.Length)], targetVolume, 0,1,.07f);
+    }
+
+    public void CrateHitSound(float magnitude)
+    {
+        float targetVolume = magnitude.Remap(remapCrateHitVol.x, remapCrateHitVol.y, remapCrateHitVol.z, remapCrateHitVol.w);
+
+        targetVolume = Mathf.Clamp(targetVolume, remapCrateHitVol.z, remapCrateHitVol.w);
+        shortSrcIndex = (shortSrcIndex + 1) % shortAudioSources.Length;
+        shortAudioSources[shortSrcIndex].PlaySound(crateHit[Random.Range(0, crateHit.Length)], targetVolume, 0, 1, .07f);
+    }
+
+    public void ButtonOnOff(bool turnedOn)
+    {
+        shortSrcIndex = (shortSrcIndex + 1) % shortAudioSources.Length;
+        shortAudioSources[shortSrcIndex].PlaySound(turnedOn ? buttonOn : buttonOff, 1f, 0, 1, .07f);
+    }
 
     public void UpdateVolume()
     {

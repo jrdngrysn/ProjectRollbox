@@ -179,8 +179,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.15, y: 1.15}
-  m_EdgeRadius: 0.24
+  m_Size: {x: 1.45, y: 1.45}
+  m_EdgeRadius: 0.1
 --- !u!114 &8548769431119128789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,6 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e493ca25862bc604e81d4214fb4dac0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
   touchHitbox: {fileID: 1312139011964895468}
   breakEffects:
   - {fileID: 5272635816127130248, guid: aedb4450a48d1864492866171f2208c8, type: 3}

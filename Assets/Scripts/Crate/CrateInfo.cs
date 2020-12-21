@@ -12,9 +12,16 @@ public class CrateInfo : MonoBehaviour
     public bool holdingPlayer;
     public GameObject playerObj;
 
+    float magStore;
+
     public void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+    }
+
+    private void FixedUpdate()
+    {
+        magStore = rb.velocity.magnitude;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -47,5 +54,13 @@ public class CrateInfo : MonoBehaviour
             }
         }
         
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (SFXManager.main != null)
+        {
+            SFXManager.main.CrateHitSound(magStore);
+        }
     }
 }

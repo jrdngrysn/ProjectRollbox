@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TransitionManager : MonoBehaviour
 {
@@ -15,7 +16,8 @@ public class TransitionManager : MonoBehaviour
     [Space]
     public float transitionTime;
     public AnimationCurve transitionCurve;
-
+    public Color[] defaultColors;
+    public Color[] iceColors;
     bool inChange;
 
     private void Awake()
@@ -62,15 +64,28 @@ public class TransitionManager : MonoBehaviour
         transitionMat.SetVector("_NoiseTiling", new Vector4(2.5f * aspectRatio, 2.5f , 0, 0));
     }
 
-    public void UpdatePalette(Palette palette)
+    public void UpdatePalette()
     {
-        //transitionMat.SetColor("_TransitionColor1", PaletteManager.main.endColorDark);
-        //transitionMat.SetColor("_TransitionColor2", PaletteManager.main.endColorLight);
-        //transitionMat.SetColor("_TransitionColor3", PaletteManager.main.startColorLight);
+        int currentScene = SceneManager.GetActiveScene().buildIndex;
+        print("Build no" + currentScene);
+        Color[] colors;
+        if (currentScene<9 || currentScene == 14)
+        {
+            print("SETTING DEFAULT");
+            colors = defaultColors;
+        }
+        else
+        {
+            colors = iceColors;
+        }
+        transitionMat.SetColor("_TransitionColor1", colors[0]);
+        transitionMat.SetColor("_TransitionColor2", colors[1]);
+        transitionMat.SetColor("_TransitionColor3", colors[2]);
     }
 
     public IEnumerator StartTransition()
     {
+        UpdatePalette();
         transitionMat.SetFloat("_TransitionValue", 0);
         inChange = true;
         int resWidth = Screen.width;
@@ -105,6 +120,7 @@ public class TransitionManager : MonoBehaviour
 
     public void Transition()
     {
+        UpdatePalette();
             if (!inChange)
             {
                 print("CHANGE");

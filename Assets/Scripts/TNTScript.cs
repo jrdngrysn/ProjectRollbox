@@ -51,7 +51,7 @@ public class TNTScript : MonoBehaviour
     {
         Rigidbody2D collisionRB = collision.gameObject.GetComponent<Rigidbody2D>();
 
-        if (collisionRB)
+        if (collisionRB && collision.gameObject.layer != 13)
         {
             canExplode = true;
         }
