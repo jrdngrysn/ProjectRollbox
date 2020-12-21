@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6036e02ac442ed447aa00e1d13aa7b95, type: 3}
   m_Name: Grassy_Door
   m_EditorClassIdentifier: 
-  buildSceneNumber: 0
-  nextLevel: {fileID: 0}
+  buildSceneNumber: 14
+  nextLevel: {fileID: 11400000, guid: 04340806616d047deacef3a07ef158c2, type: 2}
   maxCratesFor3Stars: 2
   maxCratesFor2Stars: 3
   levelCompletionData:

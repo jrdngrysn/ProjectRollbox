@@ -138,7 +138,10 @@ public class MenuManager : MonoBehaviour
             settingsHolder.gameObject.SetActive(false);
             customizeHolder.gameObject.SetActive(true);
         }
-
+        else if (newState == MenuState.LevelSelect)
+        {
+            LevelSelectManager.main.LoadData(true);
+        }
         
 
 

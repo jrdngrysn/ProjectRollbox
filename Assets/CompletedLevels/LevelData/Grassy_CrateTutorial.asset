@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Grassy_CrateTutorial
   m_EditorClassIdentifier: 
   buildSceneNumber: 4
-  nextLevel: {fileID: 11400000, guid: 04340806616d047deacef3a07ef158c2, type: 2}
+  nextLevel: {fileID: 11400000, guid: d85fd1ce21af64583a345bc9bbbe4862, type: 2}
   maxCratesFor3Stars: 1
   maxCratesFor2Stars: 2
   levelCompletionData:
-    completed: 0
-    cratesUsed: 0
-    earnedStars: 0
+    completed: 1
+    cratesUsed: 1
+    earnedStars: 3

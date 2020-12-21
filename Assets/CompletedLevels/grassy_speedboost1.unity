@@ -983,6 +983,11 @@ MonoBehaviour:
   resetDisplay: {fileID: 1838403049}
   levelComplete: 0
   levelCompleteDisplay: {fileID: 1566881037}
+  tnt: {fileID: 0}
+  button: {fileID: 0}
+  resetButton: {fileID: 0}
+  homeButton: {fileID: 0}
+  nextLevelButton: {fileID: 0}
 --- !u!4 &1322267282
 Transform:
   m_ObjectHideFlags: 0
@@ -1324,7 +1329,7 @@ PrefabInstance:
     - target: {fileID: 4908865358556449557, guid: e159358486dd77a40bfd835517c98798,
         type: 3}
       propertyPath: speed
-      value: 4
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4908865358556449557, guid: e159358486dd77a40bfd835517c98798,
         type: 3}
