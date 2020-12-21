@@ -11,6 +11,10 @@ public class PlayerManager : MonoBehaviour
 
     [Tooltip("Max speed the player can be moving on level complete platform to win.")]
     public float maxSpeedToCompleteLevel;
+    public float timeToCompleteLevel;
+
+    float totalTime;
+
 
     float magStore;
 
@@ -56,14 +60,24 @@ public class PlayerManager : MonoBehaviour
     {
         if (collision.gameObject.layer == 11)
         {
+            
             if (rb.velocity.magnitude < maxSpeedToCompleteLevel)
             {
-                if (CurrentLevelManager.main != null)
+                totalTime += Time.deltaTime;
+                if (totalTime >= timeToCompleteLevel)
                 {
-                    CurrentLevelManager.main.LevelCompleted();
+                    if (CurrentLevelManager.main != null)
+                    {
+                        CurrentLevelManager.main.LevelCompleted();
+                    }
                 }
             }
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        totalTime = 0;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

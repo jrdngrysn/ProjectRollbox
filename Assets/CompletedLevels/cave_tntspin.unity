@@ -535,6 +535,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MistPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 5866012946200045956, guid: 1d7f8d89322c342b5bbbff0e1851b720,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7240180393347144544, guid: 1d7f8d89322c342b5bbbff0e1851b720,
         type: 3}
       propertyPath: m_RootOrder
@@ -658,6 +663,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8785541253826922051, guid: 71a5ea3af30419f48bde888fe2273ba1,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8785541253826922076, guid: 71a5ea3af30419f48bde888fe2273ba1,
         type: 3}
@@ -1424,7 +1434,8 @@ PolygonCollider2D:
       - {x: 7.6323566, y: 2.9414196}
       - {x: 7.685504, y: 0.84744656}
       - {x: -5.153841, y: 0.95646703}
-      - {x: -5.096576, y: -0.46711904}
+      - {x: -4.245878, y: -0.41749007}
+      - {x: -2.0373263, y: -0.13310325}
       - {x: 9.658531, y: -0.6160517}
       - {x: 9.727692, y: -2.8241305}
 --- !u!61 &2133955981
