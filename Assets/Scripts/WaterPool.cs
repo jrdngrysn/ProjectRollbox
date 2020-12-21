@@ -165,7 +165,7 @@ public class WaterPool : MonoBehaviour
         if (waterDensity < .05f)
         {
             waterDensity = .05f;
-        }
+        }   
 
         int surfacePoints = Mathf.Max(Mathf.FloorToInt(waterWidth / waterDensity), 2);
         Vector3[] vertices = new Vector3[surfacePoints * 2];

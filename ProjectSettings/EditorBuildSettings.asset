@@ -59,4 +59,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/CompletedLevels/Grassy_Door.unity
     guid: 375640279bb61409397a67af56fc8f09
+  - enabled: 1
+    path: Assets/Scenes/CreditScene.unity
+    guid: d49f05ac150db4375a85c9d2eb125524
   m_configObjects: {}

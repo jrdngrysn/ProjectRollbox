@@ -140,7 +140,7 @@ public class MenuManager : MonoBehaviour
         }
         else if (newState == MenuState.LevelSelect)
         {
-            LevelSelectManager.main.LoadData(true);
+            LevelSelectManager.main.LoadData(true);     
         }
         
 
