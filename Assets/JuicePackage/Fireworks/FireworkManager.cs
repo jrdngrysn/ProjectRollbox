@@ -15,7 +15,6 @@ public class FireworkManager : MonoBehaviour
     public ParticleSystem launchPS;
     ParticleSystem.MainModule mainModule;
     int pCount;
-    public Vector2[] explodePos;
     [Space]
     public AudioSource[] audioSrcs;
     int srcIndex;
@@ -49,11 +48,10 @@ public class FireworkManager : MonoBehaviour
 
     }
 
-    public void LaunchParticles(int puzzleLength)
+    public void LaunchParticles()
     {
         if (!launchPS.isPlaying)
         {
-            transform.position = explodePos[puzzleLength - 3];
             launchPS.Play();
         }
     }

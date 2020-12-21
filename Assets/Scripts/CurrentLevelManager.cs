@@ -104,6 +104,11 @@ public class CurrentLevelManager : MonoBehaviour
     {
         if (!levelComplete)
         {
+            if (FireworkManager.main!=null)
+            {
+                FireworkManager.main.LaunchParticles();
+            }
+
             levelComplete = true;
             thisLevel.levelCompletionData.completed = true;
             int totalStars = GetStars(thisLevel.levelCompletionData.cratesUsed);
