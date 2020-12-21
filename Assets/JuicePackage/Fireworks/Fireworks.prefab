@@ -168,8 +168,8 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 7
-      minScalar: 2
+      scalar: 5
+      minScalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1614,13 +1614,13 @@ ParticleSystem:
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 0.42037043
-          value: -1
-          inSlope: -9.967026
-          outSlope: -9.967026
+          time: 0.71084225
+          value: -0.8235294
+          inSlope: -3.4874125
+          outSlope: -3.4874125
           tangentMode: 0
           weightedMode: 0
-          inWeight: 0.20812209
+          inWeight: 0.29660913
           outWeight: 0.33333334
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -4838,7 +4838,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5974691726166270147}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.36, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5974691725400387803}
@@ -4981,8 +4981,8 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 10
-      minScalar: 8
+      scalar: 8
+      minScalar: 5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -5559,7 +5559,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 2.47
+      value: 0.45
       mode: 0
       spread: 0
       speed:
@@ -9676,7 +9676,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   launchPS: {fileID: 5974691726166270150}
-  explodePos: []
   audioSrcs:
   - {fileID: 5974691726698312321}
   - {fileID: 5974691726698312320}

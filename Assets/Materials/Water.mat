@@ -99,8 +99,8 @@ Material:
     - _SrcBlend: 1
     - _UVSec: 0
     - _WaterFadeDistance: 0.007
-    - _WaterFlowX: -0
-    - _WaterLine: 0.21148573
+    - _WaterFlowX: -1.5
+    - _WaterLine: 0.33319998
     - _WaterOpaqueness: 0.341
     - _ZWrite: 1
     - __dirty: 0
