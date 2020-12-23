@@ -896,6 +896,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1316872213}
   - component: {fileID: 1316872214}
+  - component: {fileID: 1316872215}
   m_Layer: 0
   m_Name: Collision
   m_TagString: Untagged
@@ -947,6 +948,32 @@ PolygonCollider2D:
       - {x: 9.620483, y: -5.382792}
       - {x: 11.937666, y: -2.208128}
       - {x: -7.97025, y: -2.185543}
+--- !u!61 &1316872215
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316872212}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -6.5427766, y: -3.303382}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.160762, y: 1.2837067}
+  m_EdgeRadius: 0
 --- !u!1 &1322267280
 GameObject:
   m_ObjectHideFlags: 0
