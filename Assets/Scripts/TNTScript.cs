@@ -36,6 +36,10 @@ public class TNTScript : MonoBehaviour
 
             if (timeRemaining < 0)
             {
+                if (SFXManager.main)
+                {
+                    SFXManager.main.TNTExplode();
+                }
                 CraneManagement.main.LaunchCrates(this.transform.position, power);
                 explosion1.Play();
                 explosion2.Play();
@@ -54,6 +58,7 @@ public class TNTScript : MonoBehaviour
         if (collisionRB && collision.gameObject.layer != 13)
         {
             canExplode = true;
+
         }
         
     }

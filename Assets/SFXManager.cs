@@ -19,6 +19,7 @@ public class SFXManager : MonoBehaviour
     [Space]
     public AudioClip buttonOn;
     public AudioClip buttonOff;
+    public AudioClip tntExplode;
 
     public enum SelectSound
     {
@@ -70,6 +71,13 @@ public class SFXManager : MonoBehaviour
         targetVolume = Mathf.Clamp(targetVolume, remapCrateHitVol.z, remapCrateHitVol.w);
         shortSrcIndex = (shortSrcIndex + 1) % shortAudioSources.Length;
         shortAudioSources[shortSrcIndex].PlaySound(crateHit[Random.Range(0, crateHit.Length)], targetVolume, 0, 1, .07f);
+    }
+
+    public void TNTExplode()
+    {
+        shortSrcIndex = (shortSrcIndex + 1) % shortAudioSources.Length;
+        shortAudioSources[shortSrcIndex].PlaySound(tntExplode, .7f, 0, 1, .07f);
+
     }
 
     public void ButtonOnOff(bool turnedOn)
